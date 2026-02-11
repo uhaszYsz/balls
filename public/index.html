@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balls - Multiplayer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="game-wrapper">
+      <canvas id="canvas" width="720" height="1280"></canvas>
+      <div id="hud">
+        <span id="players-count">0 players</span>
+        <span id="lives">❤ 10</span>
+        <span id="wave">Wave 1</span>
+        <span id="status">Connecting...</span>
+      </div>
+      <div id="player-list"></div>
+      <div id="game-over-overlay" class="overlay hidden">
+        <h2 class="card-title">Game Over</h2>
+        <p>No lives left!</p>
+        <button id="restart-game-over-btn" class="menu-btn">Restart</button>
+      </div>
+      <div id="card-overlay" class="overlay hidden">
+        <h2 class="card-title">Choose a card</h2>
+        <div id="card-choices"></div>
+        <p id="card-timer"></p>
+      </div>
+      <div id="menu-overlay">
+        <button id="start-btn" class="menu-btn">Start Game</button>
+        <button id="restart-btn" class="menu-btn hidden">Restart</button>
+      </div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
